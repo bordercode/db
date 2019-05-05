@@ -1,0 +1,80 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Cayman"
+theme = "cayman-hugo-theme"
+
+# Google analytics
+googleAnalytics = "UA-123456789-1"
+
+# Disqus comments
+disqusShortname = "4insight"
+
+# Syntax highlighting
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+
+[taxonomies]
+  tag = "Análisis"
+
+[permalinks]
+  post = "/:filename/"
+
+[params]
+  # Header text, can be markdown
+  project_name = "Análisis de las tendencias de Mortalidad por Diabetes en las Fronteras de México."
+  project_tagline = "Un contraste en la evalución temporal de la mortalidad por Diabetes Tipo II en los estados fronterizos  del Norte y Sur de MéxIco en las últimas dos décadas."
+
+  # Date format for post list and single pages
+  # For more date formats see https://gohugo.io/functions/format/
+  dateFormat = "2006-01-02"
+    
+  # Footer text, can be markdown
+  footer = "All rights reserved [José Luis Manzanares Rivera](https://joseluismanzanaresrivera.github.io/Research/index.html) El Colegio de la Frontera Norte 2019."
+
+  # If true, the CSS/JS for Katex math typesetting are enabled
+  katex = true
+
+  # Breakpoints
+  large_breakpoint = "64em"
+  medium_breakpoint = "42em"
+
+  # Header colors
+  header_heading_color = "#fff"
+  header_background_color = "#EEA052"
+  header_background_color_secondary = "#EE6204"
+
+  # Text colors
+  section_headings_color = "#EE6204"
+  body_text_color = "#606c71"
+  body_link_color = "#1e6bb8"
+  blockquote_text_color = "#819198"
+
+  # Code colors
+  code_background_color = "#f3f6fa"
+  code_text_color = "#567482"
+
+  # Border colors
+  border_color = "#dce6f0"
+  table_border_color = "#e9ebec"
+  hr_border_color = "#eff0f1"
+
+[menu]
+  [[menu.nav]]
+    name = "Análisis"
+    pre= "Plots"
+    url = "/post/"
+    weight = 2
+  [[menu.nav]]
+    name = "Introducción"
+    pre = "Introducción"
+    url = "/Introducción/"
+    weight = 1
+  [[menu.nav]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+  [[menu.nav]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 4
