@@ -139,7 +139,7 @@ names(poblacion)
 ```
 
 
-```{r, include=FALSE,  Estimacion Tasa  Mortalidad d  2017}
+```{r, include=FALSE}
 
 Scasos17<-read.csv("dcasos17.csv")
 
@@ -198,7 +198,7 @@ saveRDS(TASA17,"TASA17.rds")
 ```
 
 
-```{r, echo=FALSE  PLOT  Tasas 2017  por sexo y edad }
+```{r, echo=FALSE  }
 
 TASA17<-readRDS("TASA17.rds")%>%
 mutate(Estado=as.factor(Estado))%>%

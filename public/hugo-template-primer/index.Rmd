@@ -36,7 +36,7 @@ library(gridExtra)
 
 
 
-```{r}
+```{r, include=FALSE}
 d17<-read.csv("C:/Users/LENOVO/Desktop/DESK/I/data/mortalidad/def17.csv")
 
 d<-data.frame(d=c("E11",	"E110",	"E111",	"E112",	"E113",	"E114",	"E115",	"E116",	"E117",	"E118",	"E119",	"E12",	"E120",	"E121",	"E122",	"E123",	"E124",	"E125",	"E126",	"E127",	"E128",	"E129",	"E13",	"E130",	"E131",	"E132",	"E133",	"E134",	"E135",	"E136",	"E137",	"E138",	"E139",	"E14",	"E140",	"E141",	"E142",	"E143",	"E144",	"E145",	"E146",	"E147",	"E148",	"E149"))
@@ -91,9 +91,9 @@ dcasos17<-group_by(rengedad,edad,id_ent,sexo)%>%
   summarize(casoT=sum(casos))
 
 write.csv(dcasos17,"dcasos17.csv")
-````
+```
 
-```{r}
+```{r,include=FALSE}
 
 ## Cargamos la base para POb estandar 
 
@@ -136,10 +136,10 @@ denominador<-group_by(standard,sexo)%>%
 
 poblacion<-left_join(p,standard,by=c("sexo", "edad"))
 names(poblacion)
-````
+```
 
 
-```{r  Estimacion Tasa  Mortalidad d  2017}
+```{r, include=FALSE}
 
 Scasos17<-read.csv("dcasos17.csv")
 
@@ -198,13 +198,14 @@ saveRDS(TASA17,"TASA17.rds")
 ```
 
 
-```{r  PLOT  Tasas 2015  por sexo y edad }
+```{r, echo=FALSE  }
 
 TASA17<-readRDS("TASA17.rds")%>%
 mutate(Estado=as.factor(Estado))%>%
   select(-Alta)%>%
   arrange(desc(Tasa))%>%
-  mutate(Tasa=as.numeric(Tasa),Sexo=as.factor(Sexo))
+  mutate(Tasa=as.numeric(Tasa),Sexo=as.factor(Sexo), Sexo=ifelse(Sexo==1,"Hombre","Mujer"))
+
 
 TASA17H<-filter(TASA17,Sexo==1)
 
@@ -218,23 +219,22 @@ H<-filter(TASA17,Sexo==1)%>%
 M<-filter(TASA17,Sexo==2)%>%
   summarize(mean(Tasa))
 
-## A Color plot
 
 ta<-ggplot(TASA17, aes(x=reorder(Estado,Tasa), y=Tasa, colour=Sexo,size=Tasa))+
 geom_point()+
 theme_bw()+
 theme(axis.text.x = element_text(angle=45, hjust=1, vjust=1))+
 ylab("AAMR (100 000 hab.)")+
+xlab("State")+
+guides(size=FALSE)+
 geom_vline(xintercept=17,linetype="dashed", size=.5)+
-annotate("text", x="Jalisco", y=90, label="Elevada inicdencia")+ 
-annotate("rect", xmin=17, xmax=32, ymin=0, ymax=131, alpha=.1,fill="deeppink3")+
-scale_colour_manual(values = c("deepskyblue3", "deeppink3"), labels = c("Hombre", "Mujer"))
+annotate("text", x="Mexico", y=120, label="High Diabetes Rates")+ 
+annotate("rect", xmin=17, xmax=32, ymin=0, ymax=131, alpha=.2,fill="pink")+
+scale_colour_manual(values = c("deepskyblue3", "deeppink3"))
 
 ggplotly(ta)
   
 ggsave("C:/Users/LENOVO/Desktop/DESK/I/diabetesborders/tasas_d.tiff", width = 25, height = 17, units = "cm",dpi=300)
-
-## Nota Tasa de mrtalidad  promedio en Mexico:M 21, H 95, Una clara diferencia por sexo con los hombres los que mas presentan este problema.  Alta incidencia S>95 (q75)
 
 ```
 

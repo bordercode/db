@@ -17,7 +17,30 @@
       <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/hugo-template-primer/</guid>
-      <description>## [1] &amp;quot;id_ent&amp;quot; &amp;quot;sexo&amp;quot; &amp;quot;edad&amp;quot; &amp;quot;pob&amp;quot; &amp;quot;std17&amp;quot;## Warning: Column `edad` joining character vector and factor, coercing into## character vector## Joining, by = &amp;quot;sexo&amp;quot;## Joining, by = &amp;quot;ent_res&amp;quot;## Sexo id_ent espT pstd Tasa ## 1:32 1 : 2 Min. :32027 Min. :60230241 Min. : 53.00 ## 2:32 2 : 2 1st Qu.:43227 1st Qu.:60230241 1st Qu.: 68.75 ## 3 : 2 Median :47403 Median :61759135 Median : 76.</description>
+      <description>{&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[22,30,28,11,18,16,5,31,12,17,8,2,14,21,9,29,6,25,13,23,4,24,33,19,1,20,10,7,32,3,27,26],&#34;y&#34;:[113,112,107,103,98,97,96,90,89,87,85,81,81,79,78,77,76,76,74,74,74,71,69,68,67,67,65,63,59,59,59,53],&#34;text&#34;:[&#34;reorder(Estado, Tasa): Puebla
+Tasa: 113
+Sexo: Hombre
+Tasa: 113&#34;,&#34;reorder(Estado, Tasa): Tlaxcala
+Tasa: 112
+Sexo: Hombre
+Tasa: 112&#34;,&#34;reorder(Estado, Tasa): Tabasco
+Tasa: 107
+Sexo: Hombre
+Tasa: 107&#34;,&#34;reorder(Estado, Tasa): Guanajuato
+Tasa: 103
+Sexo: Hombre
+Tasa: 103&#34;,&#34;reorder(Estado, Tasa): Morelos
+Tasa: 98
+Sexo: Hombre
+Tasa: 98&#34;,&#34;reorder(Estado, Tasa): México
+Tasa: 97
+Sexo: Hombre
+Tasa: 97&#34;,&#34;reorder(Estado, Tasa): CDMX
+Tasa: 96
+Sexo: Hombre
+Tasa: 96&#34;,&#34;reorder(Estado, Tasa): Veracruz
+Tasa: 90
+Sexo: Hombre</description>
     </item>
     
     <item>
