@@ -192,7 +192,7 @@ summary(TASA17)
 TASA17<-mutate(TASA17,Alta=ifelse(Tasa>=80,1,0))
 
 alta<-filter(TASA17,Alta==1)
-summary(alta)
+summary(TASA17)
 
 saveRDS(TASA17,"TASA17.rds")
 ```
@@ -227,10 +227,11 @@ theme(axis.text.x = element_text(angle=45, hjust=1, vjust=1))+
 ylab("AAMR (100 000 hab.)")+
 xlab("State")+
 guides(size=FALSE)+
-geom_vline(xintercept=17,linetype="dashed", size=.5)+
-annotate("text", x="Mexico", y=120, label="High Diabetes Rates")+ 
-annotate("rect", xmin=17, xmax=32, ymin=0, ymax=131, alpha=.2,fill="pink")+
-scale_colour_manual(values = c("deepskyblue3", "deeppink3"))
+geom_vline(xintercept=24,linetype="dashed", size=.5)+
+scale_colour_manual(values = c("deepskyblue3", "deeppink3"))+  
+annotate("rect", xmin=24, xmax=32, ymin=0, ymax=131, alpha=.2,fill="pink")+
+annotate("text", x="Morelos", y=120, label="High incidence")
+
 
 ggplotly(ta)
   
