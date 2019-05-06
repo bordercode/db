@@ -24,7 +24,7 @@ knitr::opts_chunk$set(eval = TRUE,
 
 
 ```{r silent-packages, echo = FALSE, eval = TRUE, message=FALSE, include = FALSE}
-
+library(ggthemes)
 library(foreign)
 library(knitr)
 library(tidyverse)
@@ -59,7 +59,7 @@ facet_wrap(~Estado, nrow=6)+
 geom_hline(yintercept = 0, linetype="dashed")+
 ylab("Tasa de crecimiento 1998=0 (%)") +
 xlab("Año")+
-scale_color_manual(values = c('red', "dodgerblue3",""))+
+scale_color_manual(values = c('orange', "deepskyblue4",""))+
 labs(color="")+
 theme(legend.position=c(.8,.02))+
 scale_x_continuous(breaks=c(0, 5, 10, 15, 17))+
@@ -81,9 +81,49 @@ is observed in **Chiapas**, with a gap equivalent to **109.8%** between diabetes
 
 Despite the fact  that, among the northern border states there is also an accelerated growth trend,  we find smaller gaps in this region. 
 
-In fact, the smallest gap between Diabetes mortality trends and the overall path is  found in Nuevo León and it's equivalent to **17%**, whhic just reflects the fact that Diabetes is defining "pulling" the observed mortality  trend. In these states Diabetes is so prevalent that it's behaviour is shaping the over all mortality trayectory.
+In fact, the smallest gap between Diabetes mortality trends and the overall path is  found in Sonora and it's equivalent to **12.8%**, which is just a reflection of the fact that Diabetes is defining "pulling" the observed mortality  trend. 
+
+In these states Diabetes is so prevalent that it's behaviour is shaping the over all mortality trayectory.
 
 This contrast relative to the southern border suggest significant and fast regional changes in the Mexican population health, as  well as important implications for the health care system as a whole, it is important to remember that Diabetes is considered a high  financial impact disease from the perspective of the Health care system.   
 
-  
+The following graphs shows a closer look a  the trend in each region.
+
+
+```{r}
+
+growth<-readRDS("tasa_a.rds")%>%
+mutate(fecha=replace(fecha,fecha==99,-1),
+fecha=replace(fecha,fecha==98,-2),
+fecha=as.numeric(fecha))%>%
+select(-c(d,casos))
+
+fn<-data.frame(fn=c("Baja California","Coahuila","Chihuahua","Nuevo León","Sonora", "Tamaulipas"))
+
+fs<-data.frame(fs=c("Campeche","Chiapas","Yucatán","Quintana Roo","Tabasco"))
+
+
+growth<-mutate(growth,fro=ifelse(Estado%in%fn$fn,1,
+                            ifelse(Estado%in%fs$fs,2,0)))
+
+f<-growth%>%
+  filter(fro!=0)
+
+p<-ggplot(f, aes(x=fecha,  group=Diabetes, color=Diabetes)) +
+geom_line(aes(y=rate))+
+facet_wrap(~Estado)+
+geom_hline(yintercept = 0, linetype="dashed")+
+ylab("Tasa de crecimiento 1998=0 (%)") +
+xlab("Año")+
+scale_color_manual(values = c('orange', "deepskyblue4",""))+
+labs(color="")+
+scale_x_continuous(breaks=c(0, 5, 10, 15, 17))+
+  theme_classic()+
+  labs(title = "Border States 1998-2017")+
+  theme(legend.position="bottom")
+
+p
+
+```
+
 
