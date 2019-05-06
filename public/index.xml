@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/hugo-template-primer/</guid>
-      <description></description>
+      <description>## [1] &amp;quot;id_ent&amp;quot; &amp;quot;sexo&amp;quot; &amp;quot;edad&amp;quot; &amp;quot;pob&amp;quot; &amp;quot;std17&amp;quot;## Warning: Column `edad` joining character vector and factor, coercing into## character vector## Joining, by = &amp;quot;sexo&amp;quot;## Joining, by = &amp;quot;ent_res&amp;quot;## Sexo id_ent espT pstd Tasa ## 1:32 1 : 2 Min. :32027 Min. :60230241 Min. : 53.00 ## 2:32 2 : 2 1st Qu.:43227 1st Qu.:60230241 1st Qu.: 68.75 ## 3 : 2 Median :47403 Median :61759135 Median : 76.</description>
     </item>
     
     <item>

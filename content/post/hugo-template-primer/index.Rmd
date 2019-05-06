@@ -36,4 +36,205 @@ library(gridExtra)
 
 
 
+```{r, include=FALSE}
+d17<-read.csv("C:/Users/LENOVO/Desktop/DESK/I/data/mortalidad/def17.csv")
+
+d<-data.frame(d=c("E11",	"E110",	"E111",	"E112",	"E113",	"E114",	"E115",	"E116",	"E117",	"E118",	"E119",	"E12",	"E120",	"E121",	"E122",	"E123",	"E124",	"E125",	"E126",	"E127",	"E128",	"E129",	"E13",	"E130",	"E131",	"E132",	"E133",	"E134",	"E135",	"E136",	"E137",	"E138",	"E139",	"E14",	"E140",	"E141",	"E142",	"E143",	"E144",	"E145",	"E146",	"E147",	"E148",	"E149"))
+
+
+#############################
+
+d17.1<-mutate(d17,age=2017-ANIO_NACIM)
+
+d17.1<-select(d17.1,ENT_RESID, age, SEXO,CAUSA_DEF)
+
+d17.1<-mutate(d17.1,d=ifelse(CAUSA_DEF%in%d$d,1,0))
+
+s.density<-filter(d17.1, age<=100&age>=0)
+
+saveRDS(s.density,"density.rds")
+
+############# Casos d/ S.
+
+totedo<-filter(d17.1, d==0 & ENT_RESID!=33& ENT_RESID!=34& ENT_RESID!=35& ENT_RESID!=99)%>%
+  group_by(ENT_RESID)%>%
+  summarize(total=n())%>%
+  mutate(freq=round(total/sum(total)*100,2))
+
+  
+##Casos c/ d
+
+cd17edo<-filter(d17.1,d==1 & ENT_RESID!=33& ENT_RESID!=34 & ENT_RESID!=35& ENT_RESID!=99)%>%
+  group_by(ENT_RESID,SEXO,age)%>%
+  summarize(total=n())%>%
+  mutate(freq=round(total/sum(total)*100,2))
+   
+
+### Variable para rangos de EDAD  round(digits=2)
+
+rengedad<-mutate(cd17edo,gpo.e=
+              ifelse(age>=0&age<=14,"0-14",
+              ifelse(age>14&age<=29,"15-29",
+              ifelse(age>29&age<=44,"30-44",                       ifelse(age>44&age<=64,"45-64","65+")))))
+
+
+rengedad<-rename(rengedad,id_ent=ENT_RESID)%>%
+  select(-freq,-age)%>%
+  rename(edad=gpo.e,casos=total)%>%
+  ungroup()%>%
+  rename(sexo=SEXO)
+
+
+## variable casos  para merge en estimacion de TAA
+
+dcasos17<-group_by(rengedad,edad,id_ent,sexo)%>%
+  summarize(casoT=sum(casos))
+
+write.csv(dcasos17,"dcasos17.csv")
+```
+
+```{r,include=FALSE}
+
+## Cargamos la base para POb estandar 
+
+pmx<-read.csv("C:/Users/LENOVO/Desktop/DESK/I/data/conapo/baseprymunMX1.csv")
+
+#Estimar Poblacion por entidad segun sexo y grupo de edad 
+
+pg<-group_by(pmx, ano,id_ent,sexo,edad)%>%
+  summarize(pob=sum(pob))
+
+
+
+# Población total en México por año  2010-2030.
+
+pyr<-group_by(pg,ano)%>%
+  summarize(total=sum(pob))%>%
+  rename(yr=ano)
+
+## Solo 2017
+
+pg17<-filter(pg,ano==2017)%>%ungroup() 
+
+p<-select(pg17,id_ent, sexo, edad,   pob,-1 )
+p<-mutate(p,sexo=ifelse(sexo=="Hombres",1,2))
+
+## Solo la Población standar   2010
+
+standard<-filter(pg,ano==2017)%>%
+  rename(s.pob17=pob)%>%ungroup()%>% 
+  group_by(edad, sexo)%>%
+  summarize(std17=sum(s.pob17))%>%
+  mutate(sexo=ifelse(sexo=="Hombres",1,2))
+
+
+
+denominador<-group_by(standard,sexo)%>%
+  summarize(pstd=sum(std17))
+
+## Merge Pob 17 con pstandard
+
+poblacion<-left_join(p,standard,by=c("sexo", "edad"))
+names(poblacion)
+```
+
+
+```{r, include=FALSE,  Estimacion Tasa  Mortalidad d  2017}
+
+Scasos17<-read.csv("dcasos17.csv")
+
+esperados17<-left_join(dcasos17,poblacion,by=
+                         c("id_ent","sexo", "edad"))%>%
+  group_by(sexo,id_ent)%>%
+  mutate(esp=casoT/pob*std17)%>%
+  summarize(espT=sum(esp))%>%filter(sexo!=9)
+
+TASA17<-left_join(esperados17,denominador)%>%
+  mutate(taes=espT/pstd*100000)%>%arrange(desc(taes))%>%
+  mutate(ent_res=sprintf("%02d",id_ent))
+
+
+## LA TASAS DE ESTIMO POR 100 mil 
+
+write.csv(TASA17,"diabetes_tasa17.csv")
+
+# Some minor editions
+
+TASA17<-read.csv("diabetes_tasa17.csv")%>%
+  na.omit(TAAS17)%>%
+  mutate(taes=as.integer(taes))%>%
+  select(-X)
+
+
+
+TASA17<-mutate(TASA17, sexo=as.factor(sexo), 
+               id_ent=as.factor(id_ent))%>%
+  rename(Sexo=sexo,Tasa=taes)%>%
+  mutate(ent_res=sprintf("%02d",ent_res))
+
+
+
+
+## El joint con nombres de estados cat_e
+ 
+cat_e<-read.csv("C:/Users/LENOVO/Desktop/DESK/I/data/cat_entidad.csv")%>%
+select(-X)%>%
+rename(ent_res=X.U.FEFF.EDO,Estado=DESCRIP)%>%
+mutate(ent_res=sprintf("%02d",ent_res))
+
+TASA17<-left_join(TASA17,cat_e)
+
+
+summary(TASA17)
+
+### NOTA  EL VALOR MEDIO DE 38 POR  MILLON .  
+
+TASA17<-mutate(TASA17,Alta=ifelse(Tasa>=80,1,0))
+
+alta<-filter(TASA17,Alta==1)
+summary(alta)
+
+saveRDS(TASA17,"TASA17.rds")
+```
+
+
+```{r, echo=FALSE  PLOT  Tasas 2017  por sexo y edad }
+
+TASA17<-readRDS("TASA17.rds")%>%
+mutate(Estado=as.factor(Estado))%>%
+  select(-Alta)%>%
+  arrange(desc(Tasa))%>%
+  mutate(Tasa=as.numeric(Tasa),Sexo=as.factor(Sexo), Sexo=ifelse(Sexo==1,"Hombre","Mujer"))
+
+
+TASA17H<-filter(TASA17,Sexo==1)
+
+saveRDS(TASA17H, "TASA17H.rds")
+
+
+
+H<-filter(TASA17,Sexo==1)%>%
+  summarize(mean(Tasa))
+
+M<-filter(TASA17,Sexo==2)%>%
+  summarize(mean(Tasa))
+
+
+ta<-ggplot(TASA17, aes(x=reorder(Estado,Tasa), y=Tasa, colour=Sexo,size=Tasa))+
+geom_point()+
+theme_bw()+
+theme(axis.text.x = element_text(angle=45, hjust=1, vjust=1))+
+ylab("AAMR (100 000 hab.)")+
+xlab("State")+
+guides(size=FALSE)+
+geom_vline(xintercept=17,linetype="dashed", size=.5)+
+annotate("text", x="Mexico", y=120, label="High Diabetes Rates")+ 
+annotate("rect", xmin=17, xmax=32, ymin=0, ymax=131, alpha=.2,fill="pink")+
+scale_colour_manual(values = c("deepskyblue3", "deeppink3"))
+
+ggplotly(ta)
+  
+ggsave("C:/Users/LENOVO/Desktop/DESK/I/diabetesborders/tasas_d.tiff", width = 25, height = 17, units = "cm",dpi=300)
+
+```
 
