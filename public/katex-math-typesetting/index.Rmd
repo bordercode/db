@@ -1,0 +1,41 @@
+---
+title: "Location quotient LQ. A look at Spatial concentration."
+author: "JLMR"
+date: "2019-04-03"
+output: html_document
+---
+
+
+```{r set-global-options, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(eval = TRUE, 
+                      echo = FALSE, 
+                      cache = FALSE,
+                      include = TRUE,
+                      collapse = FALSE,
+                      dependson = NULL,
+                      engine = "R", # Chunks will always have R code, unless noted
+                      error = FALSE,                      
+                      fig.path="Figuras/",  # Set the figure options
+                      fig.align = "center", 
+                      fig.width = 7,
+                      fig.height = 5)
+```
+
+
+
+```{r silent-packages, echo = FALSE, eval = TRUE, message=FALSE, include = FALSE}
+library(ggthemes)
+library(foreign)
+library(knitr)
+library(tidyverse)
+library(DT)
+library(plotly)
+library(grid)
+library(gridExtra)
+```
+
+
+LQ evolution in time, depicted in above , reveals a clearer pattern, an opposite path between the two border regions. While the observed trend suggest an important epidemiological transition towards improved public health at the US-Mexico border, the
+opposite holds true for the Mexico-Guatemala-Belize border. 
+
+What social determinants influence this relocation of disease at a regional level?
