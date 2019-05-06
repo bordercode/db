@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Cayman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tasas de Mortalidad Ajustadas por Estructura edad.</title>
+      <link>/hugo-template-primer/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo-template-primer/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Crecimiento de la mortalidad por Diabetes en México, 20 años de cambios.</title>
@@ -52,16 +61,6 @@ $$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$  $$ \varphi = 
       
       <guid>/2015-07-23-r-rmarkdown/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>/hugo-template-primer/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/hugo-template-primer/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
     </item>
     
     <item>

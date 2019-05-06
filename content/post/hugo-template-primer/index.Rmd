@@ -1,0 +1,39 @@
+---
+title: "Tasas de Mortalidad Ajustadas por Estructura edad."
+author: "JLMR"
+date: "2019-04-01"
+output: html_document
+---
+
+
+```{r set-global-options, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(eval = TRUE, 
+                      echo = FALSE, 
+                      cache = FALSE,
+                      include = TRUE,
+                      collapse = FALSE,
+                      dependson = NULL,
+                      engine = "R", # Chunks will always have R code, unless noted
+                      error = FALSE,                      
+                      fig.path="Figuras/",  # Set the figure options
+                      fig.align = "center", 
+                      fig.width = 7,
+                      fig.height = 5)
+```
+
+
+
+```{r silent-packages, echo = FALSE, eval = TRUE, message=FALSE, include = FALSE}
+library(ggthemes)
+library(foreign)
+library(knitr)
+library(tidyverse)
+library(DT)
+library(plotly)
+library(grid)
+library(gridExtra)
+```
+
+
+
+
