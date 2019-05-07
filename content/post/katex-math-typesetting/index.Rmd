@@ -35,7 +35,44 @@ library(gridExtra)
 ```
 
 
-LQ evolution in time, depicted in above , reveals a clearer pattern, an opposite path between the two border regions. While the observed trend suggest an important epidemiological transition towards improved public health at the US-Mexico border, the
+```{r}
+library(viridis)
+lqtrd<-read.csv("LQ98_17X.csv")
+
+fs<-mutate(lqtrd,Fecha=as.numeric(Fecha),Region=ifelse(Estado=="Coahuila"|Estado== "Nuevo León"|Estado== "Chihuahua"|Estado== "Baja California"|Estado=="Tamaulipas"|Estado=="Sonora",1,ifelse(Estado=="Chiapas"|Estado=="Yucatán"|Estado== "Campeche"|Estado== "Tabasco"|Estado=="Quintana Roo",2,0)))%>%
+  filter(LQ,Region!=0&Region!=1)
+
+fn<-mutate(lqtrd,Fecha=as.numeric(Fecha),Region=ifelse(Estado=="Coahuila"|Estado== "Nuevo León"|Estado== "Chihuahua"|Estado== "Baja California"|Estado=="Tamaulipas"|Estado=="Sonora",1,ifelse(Estado=="Chiapas"|Estado=="Yucatán"|Estado== "Campeche"|Estado== "Tabasco"|Estado=="Quintana Roo",2,0)))%>%
+  filter(LQ,Region!=0&Region!=2)
+
+
+cb_palette <- c("red", "#E69F00", "#56B4E9", "#009E73", "#F0E442","#0072B2", "#D55E00", "#CC79A7")
+
+p1<-ggplot(fs, aes(x=Fecha, y=LQ, group=Estado, colour=Estado))+
+geom_line(aes(y=LQ))+
+geom_point(size=1.5, shape=21,fill="white")+
+geom_hline(yintercept = 1,linetype="dashed")+
+xlab("")+ylab("LQ")+
+theme_bw()+
+labs(colour="State")+
+scale_colour_manual(values=cb_palette)
+
+p1
+
+p2<-ggplot(fn, aes(x=Fecha, y=LQ, group=Estado, colour=Estado))+
+geom_line(aes(y=LQ))+
+geom_point(size=1.5, shape=21,fill="white")+
+geom_hline(yintercept = 1,linetype="dashed")+
+xlab("")+ylab("LQ")+
+theme_bw()+
+labs(colour="State")+
+scale_colour_viridis_d(option = "plasma")
+p2
+```
+
+LQ evolution in time, depicted  above, reveals a clearer pattern, an opposite path between the two border regions. While the observed trend suggest an important epidemiological transition towards improved public health at the US-Mexico border, the
 opposite holds true for the Mexico-Guatemala-Belize border. 
 
 What social determinants influence this relocation of disease at a regional level?
+
+
