@@ -42,9 +42,9 @@ library(viridis)
 lq17<-read.csv("lq17.csv")%>%
   mutate(Level=ifelse(Nivel=="Alto","High","Moderate"))
 
-px<-ggplot(lq17, aes(x=reorder(Estado,LQ), y=LQ, size=LQ, color=Nivel))+
+px<-ggplot(lq17, aes(x=reorder(Estado,LQ), y=LQ, size=LQ, color=Level))+
   geom_point()+
-  xlab("Estado")+
+  xlab("State")+
   ylab("LQ")+
   theme_bw()+
 scale_colour_hue(l=45)+
