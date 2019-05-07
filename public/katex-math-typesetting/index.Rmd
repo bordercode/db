@@ -32,11 +32,30 @@ library(DT)
 library(plotly)
 library(grid)
 library(gridExtra)
+library(viridis)
 ```
 
 
-```{r}
-library(viridis)
+```{r, message=FALSE,warning=FALSE}
+
+
+lq17<-read.csv("lq17.csv")%>%
+  mutate(Level=ifelse(Nivel=="Alto","High","Moderate"))
+
+px<-ggplot(lq17, aes(x=reorder(Estado,LQ), y=LQ, size=LQ, color=Nivel))+
+  geom_point()+
+  xlab("Estado")+
+  ylab("LQ")+
+  theme_bw()+
+scale_colour_hue(l=45)+
+  coord_flip()+
+  geom_hline(yintercept=1, linetype="dashed")+
+  annotate("text", y=1.25, x=12, label="LQ=1 Nivel Nacional")+
+  annotate("segment", x=10, xend=10, y=1.3, yend=1.1,  size=.3, arrow=arrow(length=unit(.2,"cm")))
+
+px
+
+
 lqtrd<-read.csv("LQ98_17X.csv")
 
 fs<-mutate(lqtrd,Fecha=as.numeric(Fecha),Region=ifelse(Estado=="Coahuila"|Estado== "Nuevo León"|Estado== "Chihuahua"|Estado== "Baja California"|Estado=="Tamaulipas"|Estado=="Sonora",1,ifelse(Estado=="Chiapas"|Estado=="Yucatán"|Estado== "Campeche"|Estado== "Tabasco"|Estado=="Quintana Roo",2,0)))%>%
@@ -46,7 +65,7 @@ fn<-mutate(lqtrd,Fecha=as.numeric(Fecha),Region=ifelse(Estado=="Coahuila"|Estado
   filter(LQ,Region!=0&Region!=2)
 
 
-cb_palette <- c("red", "#E69F00", "#56B4E9", "#009E73", "#F0E442","#0072B2", "#D55E00", "#CC79A7")
+cb_palette <- c("red", "#E69F00", "#56B4E9", "#009E73", "gray48","#0072B2", "#D55E00", "#CC79A7")
 
 p1<-ggplot(fs, aes(x=Fecha, y=LQ, group=Estado, colour=Estado))+
 geom_line(aes(y=LQ))+
@@ -55,7 +74,8 @@ geom_hline(yintercept = 1,linetype="dashed")+
 xlab("")+ylab("LQ")+
 theme_bw()+
 labs(colour="State")+
-scale_colour_manual(values=cb_palette)
+scale_colour_manual(values=cb_palette)+
+labs(title="Southern border States 1998-2017")
 
 p1
 
@@ -66,13 +86,18 @@ geom_hline(yintercept = 1,linetype="dashed")+
 xlab("")+ylab("LQ")+
 theme_bw()+
 labs(colour="State")+
-scale_colour_viridis_d(option = "plasma")
+scale_colour_viridis_d()+
+  labs(title="Northern border States 1998-2017")
 p2
 ```
+
 
 LQ evolution in time, depicted  above, reveals a clearer pattern, an opposite path between the two border regions. While the observed trend suggest an important epidemiological transition towards improved public health at the US-Mexico border, the
 opposite holds true for the Mexico-Guatemala-Belize border. 
 
 What social determinants influence this relocation of disease at a regional level?
 
+Despite the sustained increase found at the southern border by 2017, diabetes mortality concertation levels for the region still remained below the national proportion with a clear
+exception, Tabasco. The last mentioned is a relatively affluent state in the region2 that register a proportion 20% higher than the national incidence. In addition, it is worth noting the path followed by Chiapas, the state with the lowest household income profile among the entire sample3, showing the lowest relative diabetes death concentration.
 
+Furthermore, an analysis string that has gain strength among other behavioral correlates in developing countries, such as Mexico, points towards changing consumption patterns as a key determinant. Arguably, social process, such as rural to urban migration that had previously posed major puzzles for public health (Harpham, 2009), represent forces that may supplant traditional dietary practices (Leatherman and Goodman, 2005). This happens even in regions such as the Mexico-Guatemala-Belize border, where the largest segment of indigenous population in the country lives.
