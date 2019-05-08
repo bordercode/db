@@ -34,8 +34,9 @@ library(grid)
 library(gridExtra)
 ```
 
-To evaluate diabetes mortality evolution in time in a spatial context, age adjusted mortality (AAMR) rates were estimated by sex applying the direct method. This information will be useful to determine the epidemic burden that both regions face.
-Results are shown in the Figure below.
+To evaluate diabetes mortality evolution in time in a spatial context, age adjusted mortality (AAMR) rates are estimated by sex applying the direct method. This information will be useful to determine the epidemic burden that both regions face.
+
+Results are shown in the figure below.
 
 ```{r, include=FALSE}
 d17<-read.csv("C:/Users/LENOVO/Desktop/DESK/I/data/mortalidad/def17.csv")
@@ -231,8 +232,8 @@ guides(size=FALSE)+
 geom_vline(xintercept=24,linetype="dashed", size=.5)+
 scale_colour_manual(values = c("deepskyblue3", "deeppink3"))+  
 annotate("rect", xmin=24, xmax=32, ymin=0, ymax=131, alpha=.2,fill="pink")+
-annotate("text", x="Morelos", y=120, label="High incidence")
-
+annotate("text", x="Morelos", y=120, label="High incidence")+
+labs(title="Age adjusted mortality rates", subtitle="Mexico by State 2017")
 
 ggplotly(ta)
   
