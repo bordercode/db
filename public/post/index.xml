@@ -6,27 +6,15 @@
     <description>Recent content in Posts on Diabetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Location quotient LQ. A  Spatial concentration perspective.</title>
-      <link>/katex-math-typesetting/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/katex-math-typesetting/</guid>
-      <description>Here a relative concentration measure, the location quotient LQ, is estimated to evaluate the diabetes epidemic trend in time by state and border region.
-The quotient may take two relevant values: LQ &amp;gt; 1, which indicates that diabetes deaths cases are higher in a particular state relative to the national level.
-Whereas values LQ &amp;lt;1 indicate a lower proportion relative to the national level.
-Using this relative measure allows controlling the population size in every state, to determine diabetes deaths concentration among different geographic areas.</description>
-    </item>
-    
-    <item>
       <title>Tasas de Mortalidad Ajustadas por Estructura edad.</title>
       <link>/hugo-template-primer/</link>
-      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/hugo-template-primer/</guid>
       <description>{&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[31,30,32,29,28,26,21,27,23,24,25,15,17,19,14,18,22,16,12,11,20,13,10,5,7,4,6,9,8,2,3,1],&#34;y&#34;:[113,112,107,103,98,97,96,90,89,87,85,81,81,79,78,77,76,76,74,74,74,71,69,68,67,67,65,63,59,59,59,53],&#34;text&#34;:[&#34;reorder(Estado, Tasa): Puebla
@@ -56,6 +44,18 @@ Sexo: Hombre</description>
     </item>
     
     <item>
+      <title>Location quotient LQ. A  Spatial concentration perspective.</title>
+      <link>/katex-math-typesetting/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/katex-math-typesetting/</guid>
+      <description>Here a relative concentration measure, the location quotient LQ, is estimated to evaluate the diabetes epidemic trend in time by state and border region.
+The quotient may take two relevant values: LQ &amp;gt; 1, which indicates that diabetes deaths cases are higher in a particular state relative to the national level.
+Whereas values LQ &amp;lt;1 indicate a lower proportion relative to the national level.
+Using this relative measure allows controlling the population size in every state, to determine diabetes deaths concentration among different geographic areas.</description>
+    </item>
+    
+    <item>
       <title>Crecimiento de la mortalidad por Diabetes en México, 20 años de cambios.</title>
       <link>/cayman-typography/</link>
       <pubDate>Fri, 29 Mar 2019 00:00:00 +0000</pubDate>
@@ -63,15 +63,6 @@ Sexo: Hombre</description>
       <guid>/cayman-typography/</guid>
       <description>## [1] 8.45During the last fifteen years, T2D mortality showed an explosive pattern at the border states. This growth rate pattern departs from the trend followed by all other death causes.
 In particular, a rapid growth trajectory at the southern border is evident, with a widening gap by the end of the study period. This trend reaches a 169% increase in Quintana Roo by 2019 relative to the base year 1998, with an annual 8.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015-07-23-r-rmarkdown/</guid>
-      <description></description>
     </item>
     
   </channel>

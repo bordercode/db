@@ -1,7 +1,7 @@
 ---
 title: "Tasas de Mortalidad Ajustadas por Estructura edad."
 author: "JLMR"
-date: "2019-04-01"
+date: "2019-04-04"
 output: html_document
 ---
 
