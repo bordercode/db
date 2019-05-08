@@ -34,7 +34,8 @@ library(grid)
 library(gridExtra)
 ```
 
-
+To evaluate diabetes mortality evolution in time in a spatial context, age adjusted mortality (AAMR) rates were estimated by sex applying the direct method. This information will be useful to determine the epidemic burden that both regions face.
+Results are shown in the Figure below.
 
 ```{r, include=FALSE}
 d17<-read.csv("C:/Users/LENOVO/Desktop/DESK/I/data/mortalidad/def17.csv")
@@ -198,7 +199,7 @@ saveRDS(TASA17,"TASA17.rds")
 ```
 
 
-```{r, echo=FALSE  }
+```{r, echo=FALSE, fig.width = 7, fig.height = 5 }
 
 TASA17<-readRDS("TASA17.rds")%>%
 mutate(Estado=as.factor(Estado))%>%
