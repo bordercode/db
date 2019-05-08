@@ -35,6 +35,16 @@ library(gridExtra)
 library(viridis)
 ```
 
+Here a relative concentration measure, the **location quotient LQ**, is estimated to evaluate the diabetes epidemic trend in time by state and border region.
+
+The quotient may take two relevant values: LQ > 1, which indicates that diabetes deaths cases are higher in state j relative to the national level. 
+
+Whereas values LQ <1 indicate a lower proportion in state i, relative to the national level.
+
+Using this relative measure allows controlling the population size in every state, to determine diabetes deaths concentration among different geographic areas. 
+
+
+First a cross section look for the most recent data publicly available is presented. We can clearly see that some states such as Tabasco in the souther border rank at the top concentration levels a result consistent with the profile depicted by the Age adjusted Mortality rate, previously estimated. 
 
 ```{r, message=FALSE,warning=FALSE}
 
@@ -54,7 +64,12 @@ scale_colour_hue(l=45)+
   annotate("segment", x=10, xend=10, y=1.3, yend=1.1,  size=.3, arrow=arrow(length=unit(.2,"cm")))
 
 px
+```
 
+
+Next  we isolate just the border states to query the evolution over the complete 20 year period from 1998 to 2017 by estimating the LQ for each state for each year.
+
+```{r}
 
 lqtrd<-read.csv("LQ98_17X.csv")
 
