@@ -4,6 +4,10 @@ title: Peer Review
 ---
 
 
+
+asasasa
+
+
 Manzanares Rivera, José Luis,  2017, ["Type 2 diabetes mortality at Mexican borders"](http://dx.doi.org/10.15517/psm.v14i2.27028),Población y Salud en Mesoamérica, Costa Rica,  vol. 14, núm. 2, pp. 1-21. 
 
 
