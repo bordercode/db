@@ -1,5 +1,5 @@
 ---
-title: "Tasas de Mortalidad Ajustadas por Estructura edad."
+title: "Age Adjusted Mortality rates. A current state of the disease in México."
 author: "JLMR"
 date: "2019-04-04"
 output: html_document

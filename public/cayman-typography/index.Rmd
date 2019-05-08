@@ -1,5 +1,5 @@
 ---
-title: "Crecimiento de la mortalidad por Diabetes en México, 20 años de cambios."
+title: "Diabetes Mortality growth in México, 20 years of changing public health patterns"
 author: "JLMR"
 date: "2019-03-29"
 output: html_document
