@@ -60,7 +60,7 @@ geom_hline(yintercept = 0, linetype="dashed")+
 ylab("Tasa de crecimiento 1998=0 (%)") +
 xlab("Año")+
 scale_color_manual(values = c('red', "dodgerblue3",""))+
-labs(color="")+
+labs(color="", caption ="Source: Own estimation with data from SINAIS 1998-2017")+
 theme(legend.position=c(.8,.02))+
 scale_x_continuous(breaks=c(0, 5, 10, 15, 17))+
 theme_tufte()+
@@ -68,6 +68,8 @@ theme_tufte()+
 
 p1
 ```
+<div style="text-align: justify">
+
 During the last fifteen years, T2D mortality showed an explosive pattern at the border
 states. This growth rate pattern departs from the trend followed by all other death
 causes.
@@ -87,7 +89,7 @@ In these states Diabetes is so prevalent that it's behaviour is shaping the over
 
 This contrast relative to the southern border suggest significant and fast regional changes in the Mexican population health, as  well as important implications for the health care system as a whole, it is important to remember that Diabetes is considered a high  financial impact disease from the perspective of the Health care system.   
 
-The following graphs shows a closer look a  the trend in each region.
+The following graphs shows a closer look a  the trend in each region.</div>
 
 
 ```{r}
@@ -117,7 +119,7 @@ geom_hline(yintercept = 0, linetype="dashed")+
 ylab("Tasa de crecimiento 1998=0 (%)") +
 xlab("Año")+
 scale_color_manual(values = c('orange', "deepskyblue4",""))+
-labs(color="")+
+labs(color="", caption ="Source: Own estimation with data from SINAIS 1998-2017")+
 scale_x_continuous(breaks=c(0, 5, 10, 15, 17))+
   theme_classic()+
   labs(title = "Border States 1998-2017")+
