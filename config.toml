@@ -23,7 +23,7 @@ pygmentsStyle = "pygments"
 [params]
   # Header text, can be markdown
   project_name = "20 years of Type II Diabetes mortality at Mexican border states."
-  project_tagline = "A review on Analysis on Diabetes trends from a  regional perspective."
+  project_tagline = "Analysis on Diabetes trends from a  regional perspective."
 
   # Date format for post list and single pages
   # For more date formats see https://gohugo.io/functions/format/
