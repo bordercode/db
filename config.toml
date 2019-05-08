@@ -22,8 +22,8 @@ pygmentsStyle = "pygments"
 
 [params]
   # Header text, can be markdown
-  project_name = "Análisis de las tendencias de Mortalidad por Diabetes en las Fronteras de México."
-  project_tagline = "Un contraste en la evalución temporal de la mortalidad por Diabetes Tipo II en los estados fronterizos  del Norte y Sur de MéxIco en las últimas dos décadas."
+  project_name = "20 years of Type II Diabetes mortality at Mexican border states."
+  project_tagline = "A review on Analysis on Diabetes trends from a  regional perspective."
 
   # Date format for post list and single pages
   # For more date formats see https://gohugo.io/functions/format/
@@ -61,7 +61,7 @@ pygmentsStyle = "pygments"
 
 [menu]
   [[menu.nav]]
-    name = "Análisis"
+    name = "Analysis"
     pre= "Plots"
     url = "/post/"
     weight = 2
