@@ -199,7 +199,7 @@ saveRDS(TASA17,"TASA17.rds")
 ```
 
 
-```{r, echo=FALSE, fig.width = 6, fig.height = 9 }
+```{r, echo=FALSE, fig.width = 10, fig.height = 6 }
 
 TASA17<-readRDS("TASA17.rds")%>%
 mutate(Estado=as.factor(Estado))%>%
