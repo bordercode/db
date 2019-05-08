@@ -37,9 +37,9 @@ library(viridis)
 
 Here a relative concentration measure, the **location quotient LQ**, is estimated to evaluate the diabetes epidemic trend in time by state and border region.
 
-The quotient may take two relevant values: LQ > 1, which indicates that diabetes deaths cases are higher in state j relative to the national level. 
+The quotient may take two relevant values: LQ > 1, which indicates that diabetes deaths cases are higher in a particular state  relative to the national level. 
 
-Whereas values LQ <1 indicate a lower proportion in state i, relative to the national level.
+Whereas values LQ <1 indicate a lower proportion relative to the national level.
 
 Using this relative measure allows controlling the population size in every state, to determine diabetes deaths concentration among different geographic areas. 
 
