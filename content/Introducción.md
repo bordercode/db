@@ -1,9 +1,11 @@
 ---
-title: "Introductionn"
+title: "Introduction"
 output: html_notebook
 editor_options: 
   chunk_output_type: inline
 ---
+
+<div style="text-align: justify">  
 
 The evolution of type II diabetes as a death cause in Mexico increased by 97.6% during the period between 1998-2017, while the over all death causes experienced a 44.3% increase in same period. The exponential growth rate implicit by this trend reflects a public health concern of epidemic proportions.
 
@@ -37,4 +39,4 @@ and a high food poverty incidence.
 
 A question that emerges in this context is: how these locational features found at
 contrasting border communities are reflected in the population health status as
-measured by diabetes mortality rates? In this context, the aim of this analysos is to study type II diabetes mortality rates geographic distribution and its evolution in time across both Mexican border regions during the last 20 years.
+measured by diabetes mortality rates? In this context, the aim of this analysos is to study type II diabetes mortality rates geographic distribution and its evolution in time across both Mexican border regions during the last 20 years.</div>
