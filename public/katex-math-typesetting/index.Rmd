@@ -46,7 +46,7 @@ Using this relative measure allows controlling the population size in every stat
 
 First a cross section look for the most recent data publicly available is presented. We can clearly see that some states such as Tabasco in the souther border rank at the top concentration levels a result consistent with the profile depicted by the Age adjusted Mortality rate, previously estimated. 
 
-```{r, message=FALSE,warning=FALSE}
+```{r, message=FALSE,warning=FALSE,  fig.width = 10, fig.height = 6}
 
 
 lq17<-read.csv("lq17.csv")%>%
@@ -69,7 +69,7 @@ px
 
 Next  we isolate just the border states to query the evolution over the complete 20 year period from 1998 to 2017 by estimating the LQ for each state for each year.
 
-```{r}
+```{r,  fig.width = 10, fig.height = 6}
 
 lqtrd<-read.csv("LQ98_17X.csv")
 

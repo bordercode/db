@@ -70,6 +70,15 @@ In particular, a rapid growth trajectory at the southern border is evident, with
     </item>
     
     <item>
+      <title></title>
+      <link>/references.nb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/references.nb/</guid>
+      <description>Referencescode{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
+    </item>
+    
+    <item>
       <title>Introducción</title>
       <link>/introducci%C3%B3n/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -77,6 +86,16 @@ In particular, a rapid growth trajectory at the southern border is evident, with
       <guid>/introducci%C3%B3n/</guid>
       <description>The evolution of type II diabetes as a death cause in Mexico increased by 97.6% during the period between 1998-2017, while the over all death causes experienced a 44.3% increase in same period. The exponential growth rate implicit by this trend reflects a public health concern of epidemic proportions.
 Although diabetes is a major public health problem in Mexico previously thought to be related to population with relative higher income levels or affluent, recent studies had suggested an epidemiological transition impacting individuals in lower income regions.</description>
+    </item>
+    
+    <item>
+      <title>References</title>
+      <link>/references/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/references/</guid>
+      <description>Manzanares Rivera, José Luis, 2017, &amp;ldquo;Type 2 diabetes mortality at Mexican borders&amp;rdquo;,Población y Salud en Mesoamérica, Costa Rica, vol. 14, núm. 2, pp. 1-21.
+Manzanares Rivera, José Luis, 2016, &amp;ldquo;Expenditure patterns and social determinants of type Ii diabetes epidemic in the Coahuila-texas border&amp;rdquo;, Papeles de Población, México, vol. 22, núm. 89, pp. 255-280.</description>
     </item>
     
   </channel>
