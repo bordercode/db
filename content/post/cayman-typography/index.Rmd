@@ -51,7 +51,7 @@ ave<-growth%>%
 filter(fecha==17)%>%
   group_by(d)%>%
   summarize(ave=mean(rate))
-169/20
+
 
 p1<-ggplot(growth, aes(x=fecha,  group=Diabetes, color=Diabetes)) +
 geom_line(aes(y=rate))+
