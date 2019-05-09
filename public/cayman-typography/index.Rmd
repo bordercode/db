@@ -84,7 +84,7 @@ is observed in **Chiapas**, with a gap equivalent to **109.8%** between diabetes
 
 Despite the fact  that, among the northern border states there is also an accelerated growth trend,  we find smaller gaps in this region. 
 
-In fact, the smallest gap between Diabetes mortality trends and the overall path is  found in Sonora and it's equivalent to **12.8%**, which is just a reflection of the fact that Diabetes is defining "pulling" the observed mortality  trend. 
+In fact, the smallest gap between Diabetes mortality trends and the overall path is  found in Sonora and it's equivalent to **12.8%**, which is just a reflection of the fact that Diabetes is a main component of  ("pulling") the overall mortality  trend. 
 
 In these states Diabetes is so prevalent that it's behaviour is shaping the over all mortality trayectory.
 
