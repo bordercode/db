@@ -47,7 +47,6 @@ growth<-readRDS("tasa_a.rds")%>%
          fecha=replace(fecha,fecha==98,-2), 
          fecha=as.numeric(fecha), Diabetes=as.factor(ifelse(Diabetes=="Otras_Causas", "Overall mortality","Diabetes" )))
 
-names(growth)
 
 ave<-growth%>%
 filter(fecha==17)%>%
