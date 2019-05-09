@@ -38,7 +38,7 @@ library(gridExtra)
 
 
 
-```{r, echo = FALSE, fig.width = 8, fig.height = 5  }
+```{r, echo = FALSE,  fig.width = 10, fig.height = 6  }
 
 library(ggthemes)
 
@@ -92,7 +92,7 @@ This contrast relative to the southern border suggest significant and fast regio
 The following graphs shows a closer look a  the trend in each region.</div>
 
 
-```{r}
+```{r, fig.width = 10, fig.height = 6}
 
 growth<-readRDS("tasa_a.rds")%>%
 mutate(fecha=replace(fecha,fecha==99,-1),
