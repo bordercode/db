@@ -64,7 +64,7 @@ scale_color_manual(values = c('red', "dodgerblue3",""))+
 labs(color="", caption ="Source: Own estimation with data from SINAIS 1998-2017", title="Diabetes deaths growth 1998-2017")+
 theme(legend.position=c(.8,.02))+
 scale_x_continuous(breaks=c(0, 5, 10, 15, 17))+
-theme_tufte()+
+  theme_classic()+
   theme(legend.position="bottom")
 
 p1
