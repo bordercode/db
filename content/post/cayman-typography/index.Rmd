@@ -58,10 +58,10 @@ p1<-ggplot(growth, aes(x=fecha,  group=Diabetes, color=Diabetes)) +
 geom_line(aes(y=rate))+
 facet_wrap(~Estado, nrow=6)+
 geom_hline(yintercept = 0, linetype="dashed")+
-ylab("Growth rate 1998=0 (%)") +
+ylab("1998=0 (%)") +
 xlab("Year")+
 scale_color_manual(values = c('red', "dodgerblue3",""))+
-labs(color="", caption ="Source: Own estimation with data from SINAIS 1998-2017", title="Diabetes deaths growth 1998-2017")+
+labs(color="", caption ="Source: Own estimation with data from SINAIS 1998-2017", title="Diabetes deaths growth rate 1998-2017")+
 theme(legend.position=c(.8,.02))+
 scale_x_continuous(breaks=c(0, 5, 10, 15, 17))+
   theme_classic()+
