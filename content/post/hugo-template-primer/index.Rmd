@@ -231,14 +231,13 @@ xlab("State")+
 guides(size=FALSE)+
 geom_vline(xintercept=24,linetype="dashed", size=.5, colour="red")+
 scale_colour_manual(values = c("deepskyblue3", "deeppink3"))+  
-annotate("text", x="Morelos", y=125, label="High incidence")+
+annotate("text", x="Morelos", y=75, label="High incidence")+
 labs(title="Type II diabetes Age adjusted mortality rates.  by State 2017. Mexico")+
-annotate("segment", x=24, xend=32, y=120, yend=120,  size=2, color="firebrick1", arrow=arrow(length=unit(7,"cm")))
-
-
+annotate("segment", x=24, xend=32, y=70, yend=70,  size=4, color="firebrick1", arrow=arrow(length=unit(.2,"cm")))
 
 ggplotly(ta)
   
+
 ggsave("C:/Users/LENOVO/Desktop/DESK/I/diabetesborders/tasas_d.tiff", width = 25, height = 17, units = "cm",dpi=300)
 
 ```
