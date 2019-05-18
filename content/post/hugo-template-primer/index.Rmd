@@ -232,7 +232,7 @@ guides(size=FALSE)+
 geom_vline(xintercept=24,linetype="dashed", size=.5, colour="red")+
 scale_colour_manual(values = c("deepskyblue3", "deeppink3"))+  
 annotate("text", x="Morelos", y=75, label="High incidence")+
-labs(title="Type II diabetes Age adjusted mortality rates.  by State 2017. Mexico")+
+labs(title="Type II diabetes Age adjusted mortality rates.  by State. Mexico 2017")+
 annotate("segment", x=24, xend=32, y=70, yend=70,  size=4, color="firebrick1", arrow=arrow(length=unit(.2,"cm")))
 
 ggplotly(ta)
